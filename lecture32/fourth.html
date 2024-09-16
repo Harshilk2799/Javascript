@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Avoiding too many Listeners</title>
+  </head>
+  <body>
+    <div id="wrapper">
+      <p id="fpara">First Para</p>
+      <p id="spara">Second Para</p>
+      <p id="tpara">Third Para</p>
+      <p id="fopara">Fourth Para</p>
+    </div>
+    <script>
+      //   let paras = document.querySelectorAll("p");
+
+      //   for (let i = 0; i < paras.length; i++) {
+      //     let para = paras[i];
+      //     para.addEventListener("click", function () {
+      //       alert("You have clicked on para: " + (i + 1));
+      //     });
+      //   }
+
+      let mydiv = document.getElementById("wrapper");
+
+      function alertPara(event) {
+        alert("You have clicked on para " + event.target.textContent);
+      }
+      document.addEventListener("click", alertPara);
+    </script>
+  </body>
+</html>

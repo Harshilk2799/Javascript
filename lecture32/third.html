@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Object And Default Action</title>
+  </head>
+  <body>
+    <div>
+      <p id="fpara">Hello Jee</p>
+      <a id="fanchor" href="https://www.codehelp.in">Click</a>
+    </div>
+    <script>
+      let fpara = document.getElementById("fpara");
+
+      let anchorElement = document.getElementById("fanchor");
+
+      anchorElement.addEventListener("click", function (event) {
+        event.preventDefault();
+        anchorElement.textContent = "Click Me";
+      });
+
+      function changeText(event) {
+        console.log(event);
+        fpara.textContent = "Hello, My name is Harshil";
+      }
+
+      fpara.addEventListener("click", changeText);
+    </script>
+  </body>
+</html>
